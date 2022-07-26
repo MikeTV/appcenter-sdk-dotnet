@@ -190,7 +190,7 @@ namespace Microsoft.AppCenter.Utils
 
         protected override string GetAppVersion()
         {
-            return DeploymentVersion ?? PackageVersion ?? TryToGetWinFormsAppVersion() ?? _defaultVersion;
+            return CustomVersion ?? DeploymentVersion ?? PackageVersion ?? TryToGetWinFormsAppVersion() ?? _defaultVersion;
         }
 
         private static string GetWinFormsAppVersion()
@@ -218,7 +218,7 @@ namespace Microsoft.AppCenter.Utils
 
         protected override string GetAppBuild()
         {
-            return DeploymentVersion ?? FileVersion ?? PackageVersion ?? _defaultVersion;
+            return CustomBuild ?? DeploymentVersion ?? FileVersion ?? PackageVersion ?? _defaultVersion;
         }
 
         protected override string GetScreenSize()
@@ -299,6 +299,16 @@ namespace Microsoft.AppCenter.Utils
 #endif
             }
         }
+
+        /// <summary>
+        /// Specify an application version to report
+        /// </summary>
+        public static string CustomVersion { get; set; }
+        
+        /// <summary>
+        /// Specify an application build to report
+        /// </summary>
+        public static string CustomBuild { get; set; }
 
         /// <summary>
         /// Import GetDeviceCaps function to retreive scale-independent screen size.

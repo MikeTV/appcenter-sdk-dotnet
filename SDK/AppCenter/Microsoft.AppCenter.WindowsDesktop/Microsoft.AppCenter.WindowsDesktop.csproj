@@ -9,7 +9,7 @@
     <FileVersion>4.5.3.0</FileVersion>
     <AssemblyName>Microsoft.AppCenter</AssemblyName>
     <DocumentationFile>bin\Microsoft.AppCenter.xml</DocumentationFile>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\..\appcenter-public-key.snk</AssemblyOriginatorKeyFile>
     <DelaySign>true</DelaySign>
   </PropertyGroup>
